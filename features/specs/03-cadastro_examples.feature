@@ -8,34 +8,12 @@
 
      @cadastro_valido_exemplos
      Esquema do Cenário: Cadastrar usuário com dados válidos
-     Dado que eu esteja no formulário de cadastro
-     E eu preencha os campos com <nome>,<sobrenome>,<celular>,<email>,<senha>,<senha2>
-     Quando clicar no botão Enviar
-     Então o sistema deve redirecionar para o Dashboard
-     E exibir a mensagem de confirmação <msgsucesso>
+     Dado que acesso o cadastro de usuário
+     E eu preencha os campos com <nome>,<sobrenome>,<email>,<celular>,<tipo_de_conta>,<documento>
+     Quando confirmo o cadastro
+     Então o sistema deve exibir a mensagem de confirmação <msgsucesso>
      Exemplos:
-     | nome     | sobrenome  | celular       | email                 | senha            | senha2           | msgsucesso                       |
-     | "Fabio"  | "Araujo"   | "1197624321"  | "fabio@teste.com.br"  | "**************" | "**************" | "Cadastro efetuado com sucesso!" |
-     | "Flavio" | "Araujo"   | "11976222444" | "flavio@teste.com.br" | "**************" | "**************" | "Cadastro efetuado com sucesso!" |
-     | "Felipe" | "Araujo"   | "11976222666" | "felipe@teste.com.br" | "**************" | "**************" | "Cadastro efetuado com sucesso!" |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     # | nome        | sobrenome        | celular        | email        | senha        | senha2       | msgsucesso                       |
-     # | nome_válido | sobrenome_valido | celular_valido | email_valido | senha_valida | senha_valida | "Cadastro efetuado com sucesso!" |
+     | nome     | sobrenome   | email                 | celular       | tipo_de_conta    | documento        | msgsucesso                       |
+     | "Fabio"  | "Araujo"    | "fabio@teste.com.br"  | "1197624321"  | "pf"             | "81278804005"    | "Cadastro efetuado com sucesso. Obrigado!" |
+     | "Flavio" | "Araujo"    | "flavio@teste.com.br" | "11976222444" | "pf"             | "14854676086"    | "Cadastro efetuado com sucesso. Obrigado!" |
+     | "Felipe" | "Araujo"    | "felipe@teste.com.br" | "11976222666" | "pj"             | "05474244000120" | "Cadastro efetuado com sucesso. Obrigado!" |
