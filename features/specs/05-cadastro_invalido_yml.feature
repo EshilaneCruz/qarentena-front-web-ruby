@@ -7,22 +7,18 @@
 
      @cadastro_invalido_yml
      Esquema do Cenário: Não permitir cadastrar usuário com dados inválidos
-     Dado que eu esteja no formulário de cadastro
-     E eu preencha os campos <nome>,<sobrenome>,<email>,<celular>,<tipo_de_conta>,<documento>
-     Quando clicar no botão Enviar
+     Dado que acesso o cadastro de usuário
+     E eu informe os campos <nome>,<sobrenome>,<email>,<celular>,<tipo_de_conta>,<documento> conforme arquivo
+     Quando confirmo o cadastro
      Então deve exibir no topo do formulário a mensagem de erro <msg_falha>
      E deve exibir no campo a mensagem de erro <msg_falha_campo>
      E permanecer na página de cadastro
      Exemplos:
-     | nome                          | sobrenome                         | email              | celular             | tipo_de_conta | documento       | msg_falha                                                            | msg_falha_campo     |
-     | "nome_vazio"                  | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "fisica"      | "cpf_valido"    | "There was a problem with your submission. Errors are marked below." | "Campo obrigatório" |
-     | "nome_com_caractere_inválido" | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "fisica"      | "cpf_valido"    | "There was a problem with your submission. Errors are marked below." | "Formato inválido"  |
-     | "nome_valido"                 | "sobrenome_vazio"                 | "email_valido"     | "celular_valido"    | "fisica"      | "cpf_valido"    | "There was a problem with your submission. Errors are marked below." | "Campo obrigatório" |
-     | "nome_valido"                 | "sobrenome_com_caracter_invalido" | "email_valido"     | "celular_valido"    | "fisica"      | "cpf_valido"    | "There was a problem with your submission. Errors are marked below." | "Formato inválido"  |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_vazio"      | "celular_valido"    | "juridica"    | "cnpj_valido"   | "There was a problem with your submission. Errors are marked below." | "Campo obrigatório" |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_sem_arroba" | "celular_valido"    | "juridica"    | "cnpj_valido"   | "There was a problem with your submission. Errors are marked below." | "Formato inválido"  |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_valido"     | "celular_com_letra" | "juridica"    | "cnpj_valido"   | "There was a problem with your submission. Errors are marked below." | "Formato inválido"  |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "tipo_vazio"  | "cnpj_valido"   | "There was a problem with your submission. Errors are marked below." | "Campo obrigatório" |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "juridica"    | "cpf_invalido"  | "There was a problem with your submission. Errors are marked below." | "Formato inválido"  |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "juridica"    | "cnpj_invalido" | "There was a problem with your submission. Errors are marked below." | "Formato inválido"  |
-     | "nome_valido"                 | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "juridica"    | "cnpj_vazio"    | "There was a problem with your submission. Errors are marked below." | "Campo obrigatório" |
+     | nome          | sobrenome          | email              | celular             | tipo_de_conta | documento       | msg_falha                | msg_falha_campo   |
+     | "nome_vazio"  | "sobrenome_valido" | "email_valido"     | "celular_valido"    | "pf"          | "cpf_valido"    | "mensagem_de_falha_topo" | "msg_falha_campo" |
+     # | "nome_valido" | "sobrenome_vazio"  | "email_valido"     | "celular_valido"    | "pf"          | "cpf_valido"    | "mensagem_de_falha_topo" | "msg_falha_campo" |
+     # | "nome_valido" | "sobrenome_valido" | "email_vazio"      | "celular_valido"    | "pf"          | "cpf_valido"    | "mensagem_de_falha_topo" | "msg_falha_campo" |
+     # | "nome_valido" | "sobrenome_valido" | "email_sem_arroba" | "celular_valido"    | "pf"          | "cpf_valido"    | "mensagem_de_falha_topo" | "msg_falha_campo" |
+     # | "nome_valido" | "sobrenome_valido" | "email_valido"     | "celular_com_letra" | "pj"          | "cnpj_valido"   | "mensagem_de_falha_topo" | "msg_falha_campo" |
+     # | "nome_valido" | "sobrenome_valido" | "email_valido"     | "celular_valido"    | "tipo_vazio"  | "cnpj_valido"   | "mensagem_de_falha_topo" | "msg_falha_campo" |
+     # | "nome_valido" | "sobrenome_valido" | "email_valido"     | "celular_valido"    | "pj"          | "cnpj_vazio"    | "mensagem_de_falha_topo" | "msg_falha_campo" |

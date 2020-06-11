@@ -1,6 +1,8 @@
 require 'rspec'
 require 'capybara/cucumber'
 require 'site_prism'
+require 'faker'
+require 'cpf_faker'
  
 Capybara.register_driver :site_prism do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)

@@ -13,13 +13,18 @@ Quando('confirmo o cadastro') do
 end
 
 Dado("preencho os campos do formulário com dados válidos de um novo usuário pessoa física") do
-  @cadastro_page.confirmar_cadastro
+  @cadastro_page.preencher_form_com_dados_aleatorios_pf
 end
 
-Então('o sistema deve redirecionar para o Dashboard') do
-  pending # Write code here that turns the phrase above into concrete actions
+Então('o sistema deve exibir a mensagem de boas vindas') do
+  @cadastro_page.wait_until_msg_sucesso_visible
+  expect(@cadastro_page).to have_content 'Cadastro efetuado com sucesso. Obrigado'
 end
 
-Então('exibir a mensagem de boas vindas') do
-  pending # Write code here that turns the phrase above into concrete actions
+Dado("eu preencha os campos com {string},{string},{string},{string},{string},{string}") do |nome, sobrenome, email, celular, tipo_de_conta, documento|
+  @cadastro_page.preencher_form_com_dados_informados(nome, sobrenome, email, celular, tipo_de_conta, documento)
+end
+
+Então("o sistema deve exibir a mensagem de confirmação {string}") do |msgsucesso|
+  expect(@cadastro_page).to have_content msgsucesso
 end
