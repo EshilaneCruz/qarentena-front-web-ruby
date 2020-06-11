@@ -6,10 +6,10 @@
      Para receber noticias sobre Qualidade de software
 
      
-     @cadastro_valido_fixo
-     Cenário: Cadastrar usuário com dados válidos
+     @cadastro_valido_fixo_pf
+     Cenário: Cadastrar usuário pessoa física com dados válidos
      Dado que acesso o cadastro de usuário
-     E preencho os campos do formulário com dados válidos
+     E preencho os campos do formulário com dados válidos de pessoa física
      Quando confirmo o cadastro
      Então o sistema deve redirecionar para o Dashboard
      E exibir a mensagem de boas vindas

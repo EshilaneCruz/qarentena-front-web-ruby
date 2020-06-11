@@ -12,7 +12,7 @@
      Quando clicar no botão Enviar
      Então deve exibir no topo do formulário a mensagem de erro <msg_falha>
      E deve exibir no campo a mensagem de erro <msg_falha_campo>
-     E não redirecionar para o Dashboard
+     E permanecer na página de cadastro
      Exemplos:
      | nome                          | sobrenome                         | email              | celular             | tipo_de_conta | documento       | msg_falha                                                            | msg_falha_campo     |
      | "nome_vazio"                  | "sobrenome_valido"                | "email_valido"     | "celular_valido"    | "fisica"      | "cpf_valido"    | "There was a problem with your submission. Errors are marked below." | "Campo obrigatório" |
